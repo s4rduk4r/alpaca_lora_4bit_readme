@@ -53,9 +53,11 @@ conda install -c conda-forge sentencepiece
 pip install git+https://github.com/huggingface/transformers.git
 pip install git+https://github.com/huggingface/peft.git
 pip install bitsandbytes
-# For oobabooga/text-generation-webui
+# Для oobabooga/text-generation-webui
 conda install -c conda-forge gradio
 conda install markdown
+# Для finetuning
+conda install datasets -c conda-forge
 ```
 
 ## 3. Клонируйте репозиторий `alpaca_lora_4bit`
