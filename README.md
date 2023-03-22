@@ -24,7 +24,9 @@ ln -s libcuda.so.1 libcuda.so
 ldconfig
 ```
 Save it as fix_cuda.sh in $HOME directory
+
 **Note:** you'll have to run this script each time you start WSL Ubuntu. E.g. `sudo $HOME/fix_cuda.sh`
+
 2. After installation of CUDA Toolkit for WSL Ubuntu one has to edit two files:
   * `/etc/environment` to add at the end of the `PATH=` string `:/usr/local/cuda-11.7/bin`
   * `/etc/ld.so.conf.d/cuda-11-7.conf` to add at the end of the file additional line `/usr/local/cuda-11.7/lib64`
@@ -74,6 +76,7 @@ cd text-generation-webui
 # Download quantized model
 python download-model.py --text-only decapoda-research/llama-13b-hf
 mv models/llama-13b-hf ../llama-13b-4bit
+wget https://huggingface.co/decapoda-research/llama-13b-hf-int4/resolve/main/llama-13b-4bit.pt ../llama-13b-4bit.pt
 ```
 
 ## 5. Get LoRA
