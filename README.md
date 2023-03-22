@@ -14,7 +14,7 @@ Everything was tested on Windows 10 22H2 in WSL. For Linux it all should be simi
 4. Miniconda for Linux - https://docs.conda.io/en/latest/miniconda.html
 
 # NVidia CUDA Toolkit temporary fix for bitsandbytes
-1. Make a script to recreate symlinks for the CUDA libraries - https://forums.developer.nvidia.com/t/wsl2-libcuda-so-and-libcuda-so-1-should-be-symlink/236301
+1. Make a script (or take it from [here](https://github.com/s4rduk4r/alpaca_lora_4bit_readme/blob/main/fix_cuda.sh "fix_cuda.sh")) to recreate symlinks for the CUDA libraries - https://forums.developer.nvidia.com/t/wsl2-libcuda-so-and-libcuda-so-1-should-be-symlink/236301
 ```sh
 #!/bin/bash
 cd /usr/lib/wsl/lib
