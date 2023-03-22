@@ -56,6 +56,8 @@ pip install bitsandbytes
 # For oobabooga/text-generation-webui
 conda install -c conda-forge gradio
 conda install markdown
+# For finetuning
+conda install datasets -c conda-forge
 ```
 
 ## 3. Clone `alpaca_lora_4bit`
