@@ -51,7 +51,7 @@ To check if everything works as intended run `sudo -ll`. Command has to execute 
 echo 'sudo $HOME/fix_cuda.sh' >> ~/.bashrc
 ```
 
-2. After installation of CUDA Toolkit for WSL Ubuntu one has to edit two files:
+5. After installation of CUDA Toolkit for WSL Ubuntu one has to edit two files:
   * `/etc/environment` to add at the end of the `PATH=` string `:/usr/local/cuda-11.7/bin`
   * `/etc/ld.so.conf.d/cuda-11-7.conf` to add at the end of the file additional line `/usr/local/cuda-11.7/lib64`
 Thankfully these changes seems to be permanent
