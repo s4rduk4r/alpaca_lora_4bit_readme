@@ -28,7 +28,7 @@ ldconfig
 ```sh
 chmod u+x $HOME/fix_cuda.sh
 ```
-3. Make `sudo` command execution passwordless
+4. Make `sudo` command execution passwordless
 
 ```sh
 sudo visudo
@@ -46,12 +46,12 @@ Save file (`Ctrl+O`) and exit (`Ctrl+X`)
 
 To check if everything works as intended run `sudo -ll`. Command has to execute without prompting for password
 
-4. Automate fix for each login
+5. Automate fix for each login
 ```sh
 echo 'sudo $HOME/fix_cuda.sh' >> ~/.bashrc
 ```
 
-5. After installation of CUDA Toolkit for WSL Ubuntu one has to edit two files:
+6. After installation of CUDA Toolkit for WSL Ubuntu one has to edit two files:
   * `/etc/environment` to add at the end of the `PATH=` string `:/usr/local/cuda-11.7/bin`
   * `/etc/ld.so.conf.d/cuda-11-7.conf` to add at the end of the file additional line `/usr/local/cuda-11.7/lib64`
 Thankfully these changes seems to be permanent
