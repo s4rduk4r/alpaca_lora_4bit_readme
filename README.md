@@ -13,7 +13,7 @@ Everything was tested on Windows 10 22H2 in WSL. For Linux it all should be simi
 3. NVIDIA GPU Drivers + CUDA Toolkit 11.7 + CUDA Toolkit 11.7 WSL Ubuntu
 4. Miniconda for Linux - https://docs.conda.io/en/latest/miniconda.html
 
-# NVidia CUDA Toolkit temporary fix for bitsandbytes
+# NVidia CUDA Toolkit fix for bitsandbytes
 1. Make a script (or take it from [here](https://github.com/s4rduk4r/alpaca_lora_4bit_readme/blob/main/fix_cuda.sh "fix_cuda.sh")) to recreate symlinks for the CUDA libraries - https://forums.developer.nvidia.com/t/wsl2-libcuda-so-and-libcuda-so-1-should-be-symlink/236301
 ```sh
 #!/bin/bash
@@ -23,9 +23,33 @@ ln -s libcuda.so.1.1 libcuda.so.1
 ln -s libcuda.so.1 libcuda.so
 ldconfig
 ```
-Save it as fix_cuda.sh in $HOME directory
+2. Save it as fix_cuda.sh in $HOME directory
+3. Change permission to executable
+```sh
+chmod u+x $HOME/fix_cuda.sh
+```
+3. Make `sudo` command execution passwordless
 
-**Note:** you'll have to run this script each time you start WSL Ubuntu. E.g. `sudo $HOME/fix_cuda.sh`
+```sh
+sudo visudo
+```
+
+In editor change line
+```sh
+%sudo   ALL=(ALL:ALL) ALL
+```
+to
+```sh
+%sudo   ALL=(ALL:ALL) NOPASSWD:ALL
+```
+Save file (`Ctrl+O`) and exit (`Ctrl+X`)
+
+To check if everything works as intended run `sudo -ll`. Command has to execute without prompting for password
+
+4. Automate fix for each login
+```sh
+echo 'sudo $HOME/fix_cuda.sh' >> ~/.bashrc
+```
 
 2. After installation of CUDA Toolkit for WSL Ubuntu one has to edit two files:
   * `/etc/environment` to add at the end of the `PATH=` string `:/usr/local/cuda-11.7/bin`
