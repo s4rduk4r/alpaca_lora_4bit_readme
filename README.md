@@ -66,6 +66,10 @@ conda create -n <YOUR_ENV_NAME_HERE> python=3.10
 conda install -n base conda-libmamba-solver
 conda config --set solver libmamba
 ```
+Activate newly created environment:
+```sh
+conda activate <YOUR_ENV_NAME_HERE>
+```
 
 ## 2. Install prerequisites
 ```sh
@@ -74,9 +78,6 @@ conda install -c conda-forge cudatoolkit=11.7
 conda install -c conda-forge ninja
 conda install -c conda-forge accelerate
 conda install -c conda-forge sentencepiece
-pip install git+https://github.com/huggingface/transformers.git
-pip install git+https://github.com/huggingface/peft.git
-pip install bitsandbytes
 # For oobabooga/text-generation-webui
 conda install -c conda-forge gradio
 conda install markdown
@@ -88,8 +89,7 @@ conda install datasets -c conda-forge
 ```sh
 git clone https://github.com/johnsmith0031/alpaca_lora_4bit
 cd alpaca_lora_4bit
-chmod u+x install.sh
-./install.sh
+pip install -r requirements.txt
 git clone https://github.com/oobabooga/text-generation-webui.git text-generation-webui-tmp
 mv -f text-generation-webui-tmp/{.,}* text-generation-webui/
 rmdir text-generation-webui-tmp
@@ -113,6 +113,16 @@ mv loras/alpaca13B-lora ../alpaca13b_lora
 ```
 
 ## 6. Use model
+1. [Edit](https://github.com/johnsmith0031/alpaca_lora_4bit#text-generation-webui-monkey-patch) `server.py`. Add at the top of the file this code:
+```python
+import custom_monkey_patch # apply monkey patch
+import gc
+```
+3. Fix path to autograd_4bit.py for custom_monkey_patch
+```sh
+ln -s ../autograd_4bit.py ./autograd_4bit.py
+```
+3. Start WebUI
 ```
 python server.py
 ```
