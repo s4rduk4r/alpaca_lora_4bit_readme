@@ -78,9 +78,6 @@ conda install -c conda-forge cudatoolkit=11.7
 conda install -c conda-forge ninja
 conda install -c conda-forge accelerate
 conda install -c conda-forge sentencepiece
-pip install git+https://github.com/huggingface/transformers.git
-pip install git+https://github.com/huggingface/peft.git
-pip install bitsandbytes
 # Для oobabooga/text-generation-webui
 conda install -c conda-forge gradio
 conda install markdown
@@ -92,8 +89,7 @@ conda install datasets -c conda-forge
 ```sh
 git clone https://github.com/johnsmith0031/alpaca_lora_4bit
 cd alpaca_lora_4bit
-chmod u+x install.sh
-./install.sh
+pip install -r requirements.txt
 git clone https://github.com/oobabooga/text-generation-webui.git text-generation-webui-tmp
 mv -f text-generation-webui-tmp/{.,}* text-generation-webui/
 rmdir text-generation-webui-tmp
