@@ -118,7 +118,7 @@ mv loras/alpaca13B-lora ../alpaca13b_lora
 import custom_monkey_patch # apply monkey patch
 import gc
 ```
-3. Fix path to autograd_4bit.py for custom_monkey_patch
+2. Fix path to autograd_4bit.py for custom_monkey_patch
 ```sh
 ln -s ../autograd_4bit.py ./autograd_4bit.py
 ```
