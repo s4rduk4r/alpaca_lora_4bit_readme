@@ -66,6 +66,10 @@ conda create -n <YOUR_ENV_NAME_HERE> python=3.10
 conda install -n base conda-libmamba-solver
 conda config --set solver libmamba
 ```
+Активируйте созданное окружение:
+```sh
+conda activate <YOUR_ENV_NAME_HERE>
+```
 
 ## 2. Установите библиотеки
 ```sh
@@ -113,6 +117,16 @@ mv loras/alpaca13B-lora ../alpaca13b_lora
 ```
 
 ## 6. Используйте модель
+1. [Отредактируйте](https://github.com/johnsmith0031/alpaca_lora_4bit#text-generation-webui-monkey-patch) `server.py`. В начало файла добвьте код:
+```python
+import custom_monkey_patch # apply monkey patch
+import gc
+```
+2. Восстановить путь к autograd_4bit.py для custom_monkey_patch
+```sh
+ln -s ../autograd_4bit.py ./autograd_4bit.py
+```
+3. Запустить WebUI
 ```
 python server.py
 ```
