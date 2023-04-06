@@ -24,8 +24,7 @@ conda install -c conda-forge gradio -y -n "$conda_env"
 conda install markdown -y -n "$conda_env"
 # For finetuning
 conda install datasets -c conda-forge -y -n "$conda_env"
-#conda install triton -c conda-forge -y -n "$conda_env"
-pip install --pre -U triton
+pip install triton
 
 # Clone alpaca_lora_4bit
 git clone https://github.com/johnsmith0031/alpaca_lora_4bit
