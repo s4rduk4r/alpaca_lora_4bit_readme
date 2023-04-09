@@ -2,6 +2,9 @@
 
 [English version](https://github.com/s4rduk4r/alpaca_lora_4bit_readme/edit/main/README.md)
 
+* [Модели](https://github.com/s4rduk4r/alpaca_lora_4bit_readme/blob/main/README-RU.md#gptqv2-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8) 
+* [LoRA-модули](https://github.com/s4rduk4r/alpaca_lora_4bit_readme/blob/main/README-RU.md#gptqv1-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8-%D1%83%D1%81%D1%82%D0%B0%D1%80%D0%B5%D0%B2%D1%88%D0%B8%D0%B5)
+
 Небольшое руководство к коду https://github.com/johnsmith0031/alpaca_lora_4bit
 
 Создано: 22.03.2023
