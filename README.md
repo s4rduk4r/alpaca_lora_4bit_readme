@@ -1,5 +1,8 @@
 # alpaca_lora_4bit_readme
-[Русская версия](https://github.com/s4rduk4r/alpaca_lora_4bit_readme/edit/main/README-RU.md)
+[Русская версия](https://github.com/s4rduk4r/alpaca_lora_4bit_readme/blob/main/README-RU.md)
+
+* [Models](https://github.com/s4rduk4r/alpaca_lora_4bit_readme/blob/main/README.md#gptqv2-models)
+* [LoRA-modules](https://github.com/s4rduk4r/alpaca_lora_4bit_readme/blob/main/README.md#5-get-lora)
 
 Just a simple HowTo for https://github.com/johnsmith0031/alpaca_lora_4bit
 
