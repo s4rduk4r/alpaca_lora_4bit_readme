@@ -1,4 +1,6 @@
 # alpaca_lora_4bit_readme
+[Русская версия](https://github.com/s4rduk4r/alpaca_lora_4bit_readme/edit/main/README-RU.md)
+
 Just a simple HowTo for https://github.com/johnsmith0031/alpaca_lora_4bit
 
 Created on 22.03.2023
