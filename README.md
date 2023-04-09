@@ -96,6 +96,24 @@ rmdir text-generation-webui-tmp
 ```
 
 ## 4. Get model
+### GPTQv2 models:
+1. **llama-7b:**
+ - https://huggingface.co/Neko-Institute-of-Science/LLaMA-7B-4bit-128g
+ - https://huggingface.co/sardukar/llama7b-4bit-v2
+2. **llama-13b:**
+ - https://huggingface.co/Neko-Institute-of-Science/LLaMA-13B-4bit-128g
+ - https://huggingface.co/sardukar/llama13b-4bit-v2
+4. **llama-30b:**
+ - https://huggingface.co/Neko-Institute-of-Science/LLaMA-30B-4bit-128g
+6. **llama-65b:**
+ - https://huggingface.co/Neko-Institute-of-Science/LLaMA-65B-4bit-128g
+
+### GPTQv1 models (legacy):
+1. **llama-7b** - https://huggingface.co/decapoda-research/llama-7b-hf-int4
+2. **llama-13b** - https://huggingface.co/decapoda-research/llama-13b-hf-int4
+3. **llama-30b** - https://huggingface.co/decapoda-research/llama-30b-hf-int4
+4. **llama-65b** - https://huggingface.co/decapoda-research/llama-65b-hf-int4
+
 ```sh
 # Navigate to text-generation-webui dir:
 cd text-generation-webui
@@ -106,6 +124,8 @@ wget https://huggingface.co/decapoda-research/llama-13b-hf-int4/resolve/main/lla
 ```
 
 ## 5. Get LoRA
+Comprehensive list of LoRAs - https://github.com/tloen/alpaca-lora#resources
+
 ```sh
 # Download LoRA and place it where the custom_monkey patch expects it to be
 python download-model.py samwit/alpaca13B-lora
