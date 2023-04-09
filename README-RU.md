@@ -1,4 +1,7 @@
 # alpaca_lora_4bit_readme русская версия
+
+[English version](https://github.com/s4rduk4r/alpaca_lora_4bit_readme/edit/main/README.md)
+
 Небольшое руководство к коду https://github.com/johnsmith0031/alpaca_lora_4bit
 
 Создано: 22.03.2023
@@ -96,6 +99,24 @@ rmdir text-generation-webui-tmp
 ```
 
 ## 4. Скачайте модель
+### GPTQv2 модели:
+1. **llama-7b:**
+ - https://huggingface.co/Neko-Institute-of-Science/LLaMA-7B-4bit-128g
+ - https://huggingface.co/sardukar/llama7b-4bit-v2
+2. **llama-13b:**
+ - https://huggingface.co/Neko-Institute-of-Science/LLaMA-13B-4bit-128g
+ - https://huggingface.co/sardukar/llama13b-4bit-v2
+4. **llama-30b:**
+ - https://huggingface.co/Neko-Institute-of-Science/LLaMA-30B-4bit-128g
+6. **llama-65b:**
+ - https://huggingface.co/Neko-Institute-of-Science/LLaMA-65B-4bit-128g
+
+### GPTQv1 модели (устаревшие):
+1. **llama-7b** - https://huggingface.co/decapoda-research/llama-7b-hf-int4
+2. **llama-13b** - https://huggingface.co/decapoda-research/llama-13b-hf-int4
+3. **llama-30b** - https://huggingface.co/decapoda-research/llama-30b-hf-int4
+4. **llama-65b** - https://huggingface.co/decapoda-research/llama-65b-hf-int4
+
 ```sh
 # Navigate to text-generation-webui dir:
 cd text-generation-webui
@@ -106,6 +127,8 @@ wget https://huggingface.co/decapoda-research/llama-13b-hf-int4/resolve/main/lla
 ```
 
 ## 5. Скачайте LoRA-модуль
+Полный список LoRA-модулей можно найти здесь - https://github.com/tloen/alpaca-lora#resources
+
 ```sh
 # Download LoRA and place it where the custom_monkey patch expects it to be
 python download-model.py samwit/alpaca13B-lora
