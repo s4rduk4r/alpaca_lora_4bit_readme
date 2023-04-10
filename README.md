@@ -137,15 +137,40 @@ python download-model.py samwit/alpaca13B-lora
 mv loras/alpaca13B-lora ../alpaca13b_lora
 ```
 
-## 6. Use model
+## 6. Use model for inference
 1. [Edit](https://github.com/johnsmith0031/alpaca_lora_4bit#text-generation-webui-monkey-patch) `server.py`. Add at the top of the file this code:
 ```python
 import custom_monkey_patch # apply monkey patch
 import gc
 ```
-2. Fix path to autograd_4bit.py for custom_monkey_patch
+2. Fix paths to `autograd_4bit` facilities for `custom_monkey_patch`
 ```sh
 ln -s ../autograd_4bit.py ./autograd_4bit.py
+ln -s ../matmul_utils_4bit.py matmul_utils_4bit.py
+ln -s ../triton_utils.py triton_utils.py
+ln -s ../custom_autotune.py custom_autotune.py
+```
+2. Edit `custom_monkey_patch.py` to be able to load GPTQv2 models
+
+**Important:** 
+- groupsize has to be the same as was used during model creation. In the example below it's for size 128. If the model was created without `--groupsize` argument, then value must be `-1`
+- LoRA modules produced for GPTQv1 models can produce garbage output
+
+```diff
+-    config_path = '../llama-13b-4bit/'
+-    model_path = '../llama-13b-4bit.pt'
+-    lora_path = '../alpaca13b_lora/'
++    config_path = '/path/to/model/config'
++    model_path = '/path/to/model.safetensors'
++    lora_path = '/path/to/lora'
++
++    autograd_4bit.switch_backend_to('triton')
+
+     print("Loading {} ...".format(model_path))
+     t0 = time.time()
+
+-    model, tokenizer = load_llama_model_4bit_low_ram(config_path, model_path, groupsize=-1, is_v1_model=True)
++    model, tokenizer = load_llama_model_4bit_low_ram(config_path, model_path, groupsize=128, is_v1_model=False)
 ```
 3. Start WebUI
 ```
