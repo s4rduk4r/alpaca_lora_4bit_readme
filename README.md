@@ -79,7 +79,16 @@ conda activate <YOUR_ENV_NAME_HERE>
 ## 2. Install prerequisites
 ```sh
 conda install pytorch torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvidia
+```
+try this first...
+```sh
 conda install -c conda-forge cudatoolkit=11.7
+```
+...if it doesn't work for you, then try this
+```sh
+conda install -c conda-forge cudatoolkit-dev=11.7
+```
+```sh
 conda install -c conda-forge ninja
 conda install -c conda-forge accelerate
 conda install -c conda-forge sentencepiece
